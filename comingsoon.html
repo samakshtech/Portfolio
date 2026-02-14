@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Samaksh Kaushik | Coming Soon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root {
+            --primary: #9575cd;
+            --secondary: #7e57c2;
+            --dark-bg: #0a0f25;
+            --light: #f1f5f9;
+            --gray: #94a3b8;
+            --text: #e2e8f0;
+            --transition: all 0.4s cubic-bezier(0.17, 0.67, 0.88, 1.01);
+            --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* ===== DEEP SPACE BACKGROUND ===== */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(149, 117, 205, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(102, 163, 255, 0.06) 0%, transparent 30%);
+            z-index: -2;        }
+
+        /* Animated stars */
+        .stars {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration, 3s) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Main Content */
+        .coming-soon {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .title {
+            font-size: 6.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            /* 8D Shadow: 6 layered offsets */
+            text-shadow:
+                0 0 15px rgba(255,255,255,0.3),
+                0 0 30px rgba(149, 117, 205, 0.4),
+                0 0 45px rgba(149, 117, 205, 0.3),
+                0 0 60px rgba(149, 117, 205, 0.2),
+                0 0 80px rgba(149, 117, 205, 0.15),
+                0 0 100px rgba(149, 117, 205, 0.1);
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { text-shadow:                0 0 12px rgba(255,255,255,0.2),
+                0 0 25px rgba(149, 117, 205, 0.3),
+                0 0 40px rgba(149, 117, 205, 0.2);
+            }
+            100% { text-shadow:
+                0 0 20px rgba(255,255,255,0.5),
+                0 0 40px rgba(149, 117, 205, 0.6),
+                0 0 60px rgba(149, 117, 205, 0.4),
+                0 0 80px rgba(149, 117, 205, 0.3);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            line-height: 1.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .email {
+            font-size: 1.4rem;
+            background: linear-gradient(90deg, #cbd5e1, #e2e8f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 2.5rem;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 25px rgba(149, 117, 205, 0.2);
+            animation: glowPulse 4s infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 8px 20px rgba(149, 117, 205, 0.1); }
+            100% { box-shadow: 0 12px 35px rgba(149, 117, 205, 0.3), 0 0 25px rgba(149, 117, 205, 0.2); }
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.1rem 2.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 12px 30px rgba(149, 117, 205, 0.4);
+            font-size: 1.2rem;
+            border: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 45px rgba(149, 117, 205, 0.6);
+            background: linear-gradient(135deg, #a58fd5, #8a6ac9);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            justify-content: center;
+        }
+
+        .social-link {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.3rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            background: rgba(149, 117, 205, 0.2);
+            box-shadow: 0 8px 20px rgba(149, 117, 205, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 2rem 0;
+            text-align: center;            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .title {
+                font-size: 5rem;
+            }
+            .subtitle {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 4rem;
+            }
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            .email {
+                font-size: 1.2rem;
+                padding: 0.7rem 1.8rem;
+            }
+            .cta-btn {
+                padding: 1rem 2.2rem;
+                font-size: 1.1rem;
+            }
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .title {
+                font-size: 3.2rem;
+            }
+            .subtitle {
+                font-size: 1.25rem;
+            }
+            .coming-soon {
+                padding: 1.5rem 1rem;
+            }
+            body {
+                padding: 1.5rem;
+            }
+        }
+        @media (max-width: 420px) {
+            .title {
+                font-size: 2.8rem;
+            }
+            .email {
+                font-size: 1.1rem;
+                padding: 0.6rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Main Content -->
+    <div class="coming-soon">
+        <h1 class="title">COMING SOON</h1>
+        <p class="subtitle">Building something extraordinary.<br>Stay tuned for the launch.</p>
+        
+        <div class="email">
+            samakshkaushik.tech@gmail.com
+        </div>
+        
+        <a href="mailto:samakshkaushik.tech@gmail.com" class="cta-btn">
+            Notify Me <i class="fas fa-envelope"></i>
+        </a>
+
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Samaksh Kaushik. Crafted with precision & patience.
+    </footer>
+
+    <script>
+        // Generate 100+ twinkling stars
+        document.addEventListener('DOMContentLoaded', () => {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');                
+                // Random size (0.5px to 3px)
+                const size = Math.random() * 2.5 + 0.5;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Random position
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Random duration & delay
+                const duration = Math.random() * 6 + 2;
+                star.style.setProperty('--duration', `${duration}s`);
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                starsContainer.appendChild(star);
+            }
+
+            // Optional: Add subtle parallax on mouse move
+            document.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 20;
+                const y = (e.clientY / window.innerHeight - 0.5) * 20;
+                document.querySelector('.coming-soon').style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
