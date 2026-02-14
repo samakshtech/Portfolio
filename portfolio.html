@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Samaksh Kaushik | Frontend Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root {
+            --primary: #9575cd;
+            --secondary: #7e57c2;
+            --dark-bg: #0a0f25;
+            --dark-card: #121830;
+            --light: #f1f5f9;
+            --gray: #94a3b8;
+            --text: #e2e8f0;
+            --transition: all 0.4s cubic-bezier(0.17, 0.67, 0.88, 1.01);
+            --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ===== DEEP SPACE BACKGROUND ===== */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(149, 117, 205, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(102, 163, 255, 0.06) 0%, transparent 30%);
+            z-index: -2;
+        }
+
+        /* Animated stars */
+        .stars {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration, 3s) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.4rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(10, 15, 37, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.6rem;
+            background: linear-gradient(90deg, #cbd5e1, #e2e8f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.4rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--light);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero-left {
+            flex: 1;
+            max-width: 560px;
+            padding-right: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* Profile Circle — YOUR PHOTO */
+        .profile-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            margin-top: 3.1rem;
+            margin-bottom: 2.2rem;
+            position: relative;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 4.4rem;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 0.6rem;
+            background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h2 {
+            font-size: 2.0rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2.6rem;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.2rem 2.6rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 14px 35px rgba(149, 117, 205, 0.4);
+            font-size: 1.15rem;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(149, 117, 205, 0.6);
+            background: linear-gradient(135deg, #a58fd5, #8a6ac9);
+        }
+
+        /* Sections */
+        section {
+            padding: 8rem 5%;
+        }
+
+        .section-title {
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 3.4rem;
+            position: relative;
+            color: var(--light);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -13px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--dark-card);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) rotateX(3deg);
+            box-shadow: 0 22px 45px rgba(0,0,0,0.4);
+            border-color: rgba(149, 117, 205, 0.3);
+        }
+
+        .project-img {
+            height: 180px;
+            background: linear-gradient(135deg, #2d3748, #1a202c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary);
+        }
+
+        .project-info {
+            padding: 1.8rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.45rem;
+            margin-bottom: 0.7rem;
+            color: var(--light);
+        }
+
+        .project-info p {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact {
+            display: flex;
+            flex-direction: column;
+            gap: 2.1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.4rem;
+            padding: 1.5rem;
+            background: rgba(18, 24, 48, 0.6);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(28, 38, 66, 0.8);
+            transform: translateX(5px);
+            border-color: rgba(149, 117, 205, 0.3);
+        }
+
+        .contact-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: rgba(149, 117, 205, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.45rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.4rem;
+            color: var(--light);
+        }
+
+        .contact-details p {
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3.4rem 5%;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* ===== RESPONSIVE (MOBILE-FIRST) ===== */
+        @media (max-width: 992px) {
+            .hero-left {
+                padding-right: 0;
+                text-align: center;
+                align-items: center;
+            }
+            .profile-circle {
+                margin: 0 auto 2rem;
+            }
+            .hero h1 {
+                font-size: 3.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1.2rem 4%;
+            }
+            nav ul {
+                display: none;
+            }
+            .hero {
+                text-align: center;
+                padding-top: 4rem;
+            }
+            .hero-left {
+                align-items: center;
+            }
+            .hero h1 {
+                font-size: 3.0rem;
+            }
+            .hero h2 {
+                font-size: 1.7rem;
+            }
+            section {
+                padding: 6.5rem 4%;
+            }
+            .btn {
+                padding: 1.1rem 2.2rem;
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .profile-circle {
+                width: 140px;
+                height: 140px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 2.0rem;
+            }
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .contact-icon {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero p {
+                font-size: 1.15rem;
+            }
+            .btn {
+                padding: 1rem 1.8rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Samaksh Kaushik</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-left">
+            <!-- YOUR PHOTO IN CIRCLE -->
+            <div class="profile-circle">
+                <img src="photo.jpg" alt="Samaksh Kaushik" class="profile-img">
+            </div>
+
+            <h2>Frontend Developer & UI Designer</h2>
+            <p>I build fast, accessible, and visually stunning web experiences — where code meets creativity.</p>
+            <a href="#projects" class="btn">View My Work <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="project-info">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Full-stack React + Node.js store with cart, payments, admin dashboard & real-time inventory.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="project-info">
+                    <h3>AI Analytics Dashboard</h3>
+                    <p>Data visualization dashboard with live charts, user behavior tracking, and export features.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-file-code"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio Generator</h3>
+                    <p>Auto-generate portfolios from GitHub repos using Next.js, Tailwind & OpenAI APIs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Email</h3>
+                    <p>samakshkaushik.tech@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Location</h3>
+                    <p>Mumbai, India</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Github</h3>
+                    <p>/samakshkaushik</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Samaksh Kaushik. Built with ❤️ and pure HTML/CSS/JS.</p>
+    </footer>
+
+    <script>
+        // Generate 80+ stars dynamically
+        document.addEventListener('DOMContentLoaded', () => {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 80;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random size (1px to 3px)
+                const size = Math.random() * 2 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Random position
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Random duration & delay
+                const duration = Math.random() * 5 + 3;
+                star.style.setProperty('--duration', `${duration}s`);
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                starsContainer.appendChild(star);
+            }
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Animate on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.project-card, .contact-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(25px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            window.addEventListener('scroll', () => {
+                document.querySelectorAll('.project-card, .contact-item').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.8) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
