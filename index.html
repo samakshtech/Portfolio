@@ -1,593 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Samaksh Kaushik | Frontend Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <style>
-        :root {
-            --primary: #9575cd;
-            --secondary: #7e57c2;
-            --dark-bg: #0a0f25;
-            --dark-card: #121830;
-            --light: #f1f5f9;
-            --gray: #94a3b8;
-            --text: #e2e8f0;
-            --transition: all 0.4s cubic-bezier(0.17, 0.67, 0.88, 1.01);
-            --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!-- Favicon (Inline SVG Gradient Logo) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%232563eb'/%3E%3Cstop offset='50%25' stop-color='%237c3aed'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Ctext x='50' y='72' font-size='60' font-family='Arial,sans-serif' font-weight='bold' text-anchor='middle' fill='white'%3ESK%3C/text%3E%3C/svg%3E">
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--dark-bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
+<!-- Primary Meta Tags -->
+<title>Samaksh Kaushik | IT Support & Networking Professional Portfolio</title>
+<meta name="title" content="Samaksh Kaushik | IT Support & Networking Professional Portfolio">
+<meta name="description" content="Explore the official portfolio of Samaksh Kaushik, an IT Support and Networking professional specializing in Windows Server, CCNA, and Cloud Computing. Contact Samakshkaushik.tech@gmail.com.">
+<meta name="keywords" content="Samaksh Kaushik, Samaksh, Samakshkaushik.tech@gmail.com, IT Support Portfolio, Networking Portfolio, CCNA, Windows Server, Cloud Computing, Desktop Support, Vercel Portfolio">
+<meta name="author" content="Samaksh Kaushik">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://samakshkaushik.vercel.app/" />
 
-        /* ===== DEEP SPACE BACKGROUND ===== */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(149, 117, 205, 0.08) 0%, transparent 25%),
-                radial-gradient(circle at 80% 70%, rgba(102, 163, 255, 0.06) 0%, transparent 30%);
-            z-index: -2;
-        }
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samakshkaushik.vercel.app/">
+<meta property="og:title" content="Samaksh Kaushik | IT Support & Networking Professional Portfolio">
+<meta property="og:description" content="Explore the official portfolio of Samaksh Kaushik, an IT Support and Networking professional specializing in Windows Server, CCNA, and Cloud Computing.">
+<meta property="og:image" content="https://samakshkaushik.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
 
-        /* Animated stars */
-        .stars {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://samakshkaushik.vercel.app/">
+<meta property="twitter:title" content="Samaksh Kaushik | IT Support & Networking Professional Portfolio">
+<meta property="twitter:description" content="Explore the official portfolio of Samaksh Kaushik, an IT Support and Networking professional specializing in Windows Server, CCNA, and Cloud Computing.">
+<meta property="twitter:image" content="https://samakshkaushik.vercel.app/og-image.png">
 
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle var(--duration, 3s) infinite ease-in-out;
-        }
+<!-- Structured Data / JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Samaksh Kaushik",
+  "alternateName": "Samaksh",
+  "jobTitle": "IT Support & Networking Professional",
+  "email": "samakshkaushik.tech@gmail.com",
+  "url": "https://samakshkaushik.vercel.app",
+  "sameAs": [
+    "https://www.instagram.com/cyberbhai_",
+    "https://www.youtube.com/@psofficialteam"
+  ],
+  "knowsAbout": ["IT Support", "Networking", "Windows Server", "CCNA", "Cloud Computing", "AI", "Desktop Support", "Hardware Troubleshooting"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "samakshkaushik.tech@gmail.com",
+    "contactType": "Technical Support"
+  }
+}
+</script>
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.3); }
-        }
+<!-- Fonts and Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.4rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(10, 15, 37, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif;user-select:none}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(135deg,#f8faff,#fff,#eef4ff);color:#111827;transition:.4s;overflow-x:hidden}
 
-        .logo {
-            font-weight: 600;
-            font-size: 1.6rem;
-            background: linear-gradient(90deg, #cbd5e1, #e2e8f0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+/* NAVBAR */
+.navbar{
+  position:fixed;top:10px;left:10px;right:10px;
+  background:#fff;padding:14px 24px;border-radius:22px;
+  display:flex;justify-content:space-between;align-items:center;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);z-index:999;
+  animation:slideInDown .8s cubic-bezier(.4,0,.2,1);
+}
+@keyframes slideInDown{from{transform:translateY(-100px);opacity:0}to{transform:translateY(0);opacity:1}}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.4rem;
-        }
+.logo{
+  font-family:'Outfit',sans-serif;
+  font-size:34px;font-weight:800;
+  background:linear-gradient(90deg,#2563eb,#7c3aed,#2563eb);
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientMove 3s linear infinite;
+}
+@keyframes gradientMove{to{background-position:200% center}}
 
-        nav a {
-            text-decoration: none;
-            color: var(--gray);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
+.navbar ul{display:flex;gap:28px;list-style:none;align-items:center}
+.navbar a{
+  text-decoration:none;color:#111827;font-weight:600;
+  position:relative;transition:.3s;font-size:15px;
+  padding:6px 4px;letter-spacing:.5px;
+  font-family:'Outfit',sans-serif;
+}
+.navbar a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#2563eb;transition:.3s}
+.navbar a:hover{color:#2563eb}
+.navbar a:hover::after{width:100%}
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:flex-start;
+  text-align:left;padding:110px 6% 30px;position:relative;overflow:hidden;
+}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.4;animation:floatBlob 8s ease-in-out infinite;z-index:0}
+.blob1{width:300px;height:300px;background:#2563eb;top:10%;left:-100px}
+.blob2{width:250px;height:250px;background:#7c3aed;bottom:10%;right:-80px;animation-delay:2s}
+.blob3{width:200px;height:200px;background:#ec4899;top:50%;left:50%;animation-delay:4s}
+@keyframes floatBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.1)}66%{transform:translate(-20px,20px) scale(.9)}}
 
-        nav a:hover {
-            color: var(--light);
-        }
+.hero-content{position:relative;z-index:1;max-width:900px;width:100%;animation:fadeInUp 1s .3s backwards}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
-        nav a:hover::after {
-            width: 100%;
-        }
+.hero h1{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(2rem, 7vw, 3.5rem);font-weight:800;line-height:1.1;
+  animation:fadeInUp 1s .5s backwards;
+}
+.hero h1 .line1{color:#111827;display:block}
+.hero h1 .line2{
+  display:block;
+  background:linear-gradient(90deg,#2563eb,#7c3aed,#ec4899,#2563eb);
+  background-size:300% auto;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientMove 4s linear infinite;
+  font-size:clamp(1.8rem, 6.5vw, 3.2rem);white-space:nowrap;
+}
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            position: relative;
-        }
+.hero p{
+  max-width:700px;margin:20px 0;line-height:1.9;color:#64748b;
+  font-size:clamp(14px,3.2vw,17px);letter-spacing:.3px;
+  animation:fadeInUp 1s .7s backwards;
+}
 
-        .hero-left {
-            flex: 1;
-            max-width: 560px;
-            padding-right: 4rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+.btn{
+  display:inline-block;padding:14px 30px;background:#2563eb;color:#fff;
+  text-decoration:none;border-radius:50px;font-weight:600;
+  position:relative;overflow:hidden;transition:.3s;
+  animation:fadeInUp 1s .9s backwards;box-shadow:0 8px 20px rgba(37,99,235,.3);margin-top:10px;
+  font-family:'Outfit',sans-serif;letter-spacing:.5px;
+}
+.btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:.6s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(37,99,235,.5)}
+.btn:hover::before{left:100%}
 
-        /* Profile Circle — YOUR PHOTO */
-        .profile-circle {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-            margin-top: 3.1rem;
-            margin-bottom: 2.2rem;
-            position: relative;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-        }
+/* SECTIONS */
+.container{width:90%;max-width:1100px;margin:auto}
+section{padding:60px 0}
 
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+#about{padding-bottom:20px}
+#skills{padding-top:40px;margin-top:-20px}
 
-        .hero h1 {
-            font-size: 4.4rem;
-            font-weight: 800;
-            line-height: 1.05;
-            margin-bottom: 0.6rem;
-            background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.5px;
-        }
+.about-title,.heading{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(1.8rem,5vw,2.5rem);margin-bottom:25px;
+  position:relative;display:inline-block;font-weight:800;
+  letter-spacing:-.5px;
+}
+.about-title::after,.heading::after{
+  content:'';position:absolute;bottom:-8px;left:0;width:70px;height:4px;
+  background:linear-gradient(90deg,#2563eb,#7c3aed);border-radius:2px;
+  transform-origin:left;transform:scaleX(0);animation:expandWidth 1s .3s ease-out forwards;
+}
+@keyframes expandWidth{to{transform:scaleX(1)}}
 
-        .hero h2 {
-            font-size: 2.0rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 1.4rem;
-            letter-spacing: 0.5px;
-        }
+.card{
+  padding:45px 40px;border-radius:28px;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);background:#fff;transition:.4s;
+}
+.about-content-card{
+  padding:55px 45px;
+  margin-bottom:30px;
+}
+.about-content-card p{
+  font-size:clamp(15px,3.6vw,19px);
+  line-height:2.2;
+  letter-spacing:.4px;
+  color:#1e293b;
+  word-spacing:2px;
+}
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--gray);
-            margin-bottom: 2.6rem;
-            max-width: 500px;
-            line-height: 1.7;
-        }
+/* Scroll Animations */
+.fade-in{opacity:0;transform:translateY(40px);transition:all .8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.slide-left{opacity:0;transform:translateX(-50px);transition:all .8s ease}
+.slide-left.visible{opacity:1;transform:translateX(0)}
+.slide-right{opacity:0;transform:translateX(50px);transition:all .8s ease}
+.slide-right.visible{opacity:1;transform:translateX(0)}
+.scale-in{opacity:0;transform:scale(.8);transition:all .6s ease}
+.scale-in.visible{opacity:1;transform:scale(1)}
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1.2rem 2.6rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0 14px 35px rgba(149, 117, 205, 0.4);
-            font-size: 1.15rem;
-            border: none;
-        }
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.skill{cursor:pointer;position:relative;overflow:hidden;transition:.4s cubic-bezier(.4,0,.2,1)}
+.skill::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#2563eb,#7c3aed);opacity:0;transition:.4s;z-index:0}
+.skill>*{position:relative;z-index:1;transition:.4s}
+.skill:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(37,99,235,.25)}
+.skill:hover::before{opacity:.08}
+.skill:hover i{transform:scale(1.2) rotate(10deg);color:#7c3aed}
+.skill i{font-size:32px;color:#2563eb;margin-bottom:12px;display:inline-block;transition:.4s}
+.skill h3{font-family:'Outfit',sans-serif;margin-bottom:10px;font-size:1.15rem;font-weight:700}
+.skill p{color:#64748b;line-height:1.7;letter-spacing:.3px;font-size:14.5px}
+.skill:nth-child(1){transition-delay:.1s}
+.skill:nth-child(2){transition-delay:.2s}
+.skill:nth-child(3){transition-delay:.3s}
+.skill:nth-child(4){transition-delay:.4s}
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(149, 117, 205, 0.6);
-            background: linear-gradient(135deg, #a58fd5, #8a6ac9);
-        }
+/* Contact */
+.contact-card{max-width:700px;margin:auto;text-align:center}
+.contact-card .mail i{font-size:44px;color:#2563eb;animation:bounceMail 2s infinite;display:inline-block;margin-bottom:12px}
+@keyframes bounceMail{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-        /* Sections */
-        section {
-            padding: 8rem 5%;
-        }
+/* ============= BRAND BUTTONS (White BG for all) ============= */
+.brand-btn{
+  font-family:'Outfit',sans-serif;
+  text-decoration:none;
+  padding:13px 28px;
+  background:#fff;
+  border-radius:40px;
+  font-weight:700;
+  transition:.4s cubic-bezier(.4,0,.2,1);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  letter-spacing:.5px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+  border:1px solid rgba(0,0,0,.04);
+  font-size:clamp(15px,3.5vw,18px);
+  min-width:220px;
+  justify-content:center;
+}
+.brand-btn::before{
+  content:'';
+  position:absolute;
+  top:0;left:-100%;
+  width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);
+  transition:.6s;
+}
+.brand-btn:hover::before{left:100%}
+.brand-btn:hover{
+  transform:translateY(-5px) scale(1.05);
+}
+.brand-btn .brand-icon{
+  font-size:20px;
+  transition:.4s;
+  display:inline-block;
+}
+.brand-btn:hover .brand-icon{transform:rotate(360deg) scale(1.2)}
 
-        .section-title {
-            font-size: 2.3rem;
-            font-weight: 700;
-            margin-bottom: 3.4rem;
-            position: relative;
-            color: var(--light);
-        }
+/* Gmail Text Colors */
+.gmail-text{font-weight:800;font-size:clamp(15px,3.5vw,18px);letter-spacing:.3px;font-family:'Outfit',sans-serif}
+.gmail-text .g-letter{color:#4285F4}
+.gmail-text .m-letter{color:#EA4335}
+.gmail-text .a-letter{color:#FBBC05}
+.gmail-text .i-letter{color:#4285F4}
+.gmail-text .l-letter{color:#34A853}
+.gmail-btn:hover{box-shadow:0 12px 28px rgba(66,133,244,.25)}
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -13px;
-            left: 0;
-            width: 70px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
+/* Instagram Button */
+.insta-btn:hover{box-shadow:0 12px 28px rgba(225,48,108,.22)}
+.insta-btn .insta-icon{
+  background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:900;
+}
+.insta-text{
+  font-weight:800;
+  font-size:clamp(15px,3.5vw,18px);
+  letter-spacing:.5px;
+  background:linear-gradient(90deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-size:200% auto;
+  animation:instaShine 3s linear infinite;
+}
+@keyframes instaShine{to{background-position:200% center}}
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 2.5rem;
-        }
+/* YouTube Button */
+.yt-btn:hover{box-shadow:0 12px 28px rgba(255,0,0,.22)}
+.yt-btn .yt-icon{
+  color:#FF0000;
+  font-weight:900;
+  filter:drop-shadow(0 2px 4px rgba(255,0,0,.2));
+}
+.yt-text{
+  font-weight:800;
+  font-size:clamp(15px,3.5vw,18px);
+  letter-spacing:.5px;
+}
+.yt-text .you{color:#282828}
+.yt-text .tube{color:#FF0000}
 
-        .project-card {
-            background: var(--dark-card);
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(255,255,255,0.08);
-        }
+/* Social container */
+.social{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:20px}
 
-        .project-card:hover {
-            transform: translateY(-10px) rotateX(3deg);
-            box-shadow: 0 22px 45px rgba(0,0,0,0.4);
-            border-color: rgba(149, 117, 205, 0.3);
-        }
+footer{text-align:center;padding:30px 20px;color:#64748b;font-family:'Outfit',sans-serif;letter-spacing:.5px}
 
-        .project-img {
-            height: 180px;
-            background: linear-gradient(135deg, #2d3748, #1a202c);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--primary);
-        }
+.progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#2563eb,#7c3aed,#ec4899);z-index:1000;transition:width .1s}
+.typed::after{content:'|';color:#2563eb;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
 
-        .project-info {
-            padding: 1.8rem;
-        }
-
-        .project-info h3 {
-            font-size: 1.45rem;
-            margin-bottom: 0.7rem;
-            color: var(--light);
-        }
-
-        .project-info p {
-            color: var(--gray);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Contact */
-        .contact {
-            display: flex;
-            flex-direction: column;
-            gap: 2.1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.4rem;
-            padding: 1.5rem;
-            background: rgba(18, 24, 48, 0.6);
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: var(--transition);
-        }
-
-        .contact-item:hover {
-            background: rgba(28, 38, 66, 0.8);
-            transform: translateX(5px);
-            border-color: rgba(149, 117, 205, 0.3);
-        }
-
-        .contact-icon {
-            width: 58px;
-            height: 58px;
-            border-radius: 16px;
-            background: rgba(149, 117, 205, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.45rem;
-            flex-shrink: 0;
-        }
-
-        .contact-details h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.4rem;
-            color: var(--light);
-        }
-
-        .contact-details p {
-            color: var(--gray);
-            font-size: 1.05rem;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3.4rem 5%;
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-
-        /* ===== RESPONSIVE (MOBILE-FIRST) ===== */
-        @media (max-width: 992px) {
-            .hero-left {
-                padding-right: 0;
-                text-align: center;
-                align-items: center;
-            }
-            .profile-circle {
-                margin: 0 auto 2rem;
-            }
-            .hero h1 {
-                font-size: 3.6rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 1.2rem 4%;
-            }
-            nav ul {
-                display: none;
-            }
-            .hero {
-                text-align: center;
-                padding-top: 4rem;
-            }
-            .hero-left {
-                align-items: center;
-            }
-            .hero h1 {
-                font-size: 3.0rem;
-            }
-            .hero h2 {
-                font-size: 1.7rem;
-            }
-            section {
-                padding: 6.5rem 4%;
-            }
-            .btn {
-                padding: 1.1rem 2.2rem;
-                font-size: 1.05rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .profile-circle {
-                width: 140px;
-                height: 140px;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .section-title {
-                font-size: 2.0rem;
-            }
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
-            }
-            .contact-icon {
-                margin-bottom: 1rem;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .hero p {
-                font-size: 1.15rem;
-            }
-            .btn {
-                padding: 1rem 1.8rem;
-                font-size: 1rem;
-            }
-        }
-    </style>
+@media(max-width:768px){
+  .navbar{padding:12px 16px;border-radius:18px}
+  .navbar ul{gap:18px}
+  .navbar a{font-size:14px}
+  .logo{font-size:28px}
+  .hero{padding:100px 5% 30px}
+  .hero h1 .line2{font-size:clamp(1.5rem, 7vw, 2.3rem);white-space:normal}
+  .about-title,.heading{font-size:1.7rem}
+  .skills{grid-template-columns:1fr}
+  .card{padding:28px 22px}
+  .about-content-card{padding:35px 25px}
+  .about-content-card p{line-height:2;font-size:15px}
+}
+</style>
 </head>
 <body>
-    <!-- Stars Background -->
-    <div class="stars" id="stars"></div>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">Samaksh Kaushik</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="progress" id="progressBar"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-left">
-            <!-- YOUR PHOTO IN CIRCLE -->
-            <div class="profile-circle">
-                <img src="photo.jpg" alt="Samaksh Kaushik" class="profile-img">
-            </div>
+<nav class="navbar">
+<div class="logo">SK</div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-            <h2>Frontend Developer & UI Designer</h2>
-            <p>I build fast, accessible, and visually stunning web experiences — where code meets creativity.</p>
-            <a href="#projects" class="btn">View My Work <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </section>
+<section class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  <div class="hero-content">
+    <h1>
+      <span class="line1">Hi, I'm</span>
+      <span class="line2" id="typedName">Samaksh Kaushik</span>
+    </h1>
+    <p>IT Support & Networking Enthusiast passionate about Windows Server, Hardware Troubleshooting, Networking, CCNA, Cloud Computing and AI Technologies.</p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+</section>
 
-    <!-- Projects -->
-    <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-                <div class="project-info">
-                    <h3><a href="comingsoon.html">E-Commerce Platform</a></h3>
-                    <p>Full-stack React + Node.js store with cart, payments, admin dashboard & real-time inventory.</p>
-                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-chart-bar"></i>
-                </div>
-                <div class="project-info">
-                    <h3><a href="comingsoon.html">AI Analytics Dashboard</a></h3>
-                    <p>Data visualization dashboard with live charts, user behavior tracking, and export features.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-file-code"></i>
-                </div>
-                <div class="project-info">
-                    <h3><a href="comingsoon.html">Portfolio Generator</a></h3>
-                    <p>Auto-generate portfolios from GitHub repos using Next.js, Tailwind & OpenAI APIs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<main>
+<section id="about">
+<div class="container">
+  <h2 class="about-title fade-in">About Me</h2>
+  <div class="card about-content-card slide-left fade-in">
+    <p>I am a passionate IT Support and Networking enthusiast with a Diploma in Cloud Computing with AI, Hardware & Networking. I have hands-on experience in Windows Server, DNS, DHCP, IIS, LAN/WAN Networking, Hardware Troubleshooting, Desktop Support and System Administration. My goal is to build a successful career in IT Infrastructure, Networking and Cyber Security.</p>
+  </div>
+</div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact">
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-details">
-                    <h3>Email</h3>
-                    <p>  <a href="mailto:samakshkaushik.tech@gmail.com">samakshkaushik.tech@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-details">
-                    <h3>Location</h3>
-                    <p>Uttar Pradesh, India</p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <div class="contact-details">
-                    <h3>Github</h3>
-                    <p>/samakshtech</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="skills">
+<div class="container">
+  <h2 class="heading fade-in">Technical Skills</h2>
+  <div class="skills">
+    <div class="card skill scale-in"><i class="fas fa-network-wired"></i><h3>Networking</h3><p>CCNA, LAN/WAN, IP Addressing, Routing & Switching.</p></div>
+    <div class="card skill scale-in"><i class="fas fa-server"></i><h3>Windows Server</h3><p>DNS, DHCP, WDS, IIS, WSUS, DFS Replication.</p></div>
+    <div class="card skill scale-in"><i class="fas fa-laptop"></i><h3>Desktop Support</h3><p>PC & Laptop Troubleshooting, Printer Support.</p></div>
+    <div class="card skill scale-in"><i class="fas fa-cloud"></i><h3>Cloud & AI</h3><p>Cloud Computing and AI Fundamentals.</p></div>
+  </div>
+</div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Samaksh Kaushik. Built with ❤️ and pure HTML/CSS/JS.</p>
-    </footer>
+<section id="contact">
+<div class="container">
+  <h2 class="heading fade-in">Contact Me</h2>
+  <div class="card contact-card slide-right fade-in">
+    <div class="mail"><i class="fas fa-envelope"></i></div>
+    
+    <!-- Visible Email Text for SEO and Accessibility -->
+    <p style="font-family:'Outfit',sans-serif; font-size:clamp(15px, 3.5vw, 18px); color:#1e293b; margin-bottom:20px; font-weight:600; letter-spacing:.3px; word-break:break-all; text-align:center;">
+      Samakshkaushik.tech@gmail.com
+    </p>
 
-    <script>
-        // Generate 80+ stars dynamically
-        document.addEventListener('DOMContentLoaded', () => {
-            const starsContainer = document.getElementById('stars');
-            const starCount = 80;
-            
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                
-                // Random size (1px to 3px)
-                const size = Math.random() * 2 + 1;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                
-                // Random position
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                
-                // Random duration & delay
-                const duration = Math.random() * 5 + 3;
-                star.style.setProperty('--duration', `${duration}s`);
-                star.style.animationDelay = `${Math.random() * 5}s`;
-                
-                starsContainer.appendChild(star);
-            }
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:10px">
 
-            // Smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+      <!-- Gmail Button -->
+      <a href="mailto:Samakshkaushik.tech@gmail.com" class="brand-btn gmail-btn">
+        <i class="fas fa-envelope brand-icon" style="color:#EA4335"></i>
+        <span class="gmail-text">
+          <span class="g-letter">G</span><span class="m-letter">m</span><span class="a-letter">a</span><span class="i-letter">i</span><span class="l-letter">l</span>
+        </span>
+      </a>
 
-            // Animate on scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    }
-                });
-            }, { threshold: 0.1 });
+      <!-- Instagram Button -->
+      <a href="https://www.instagram.com/cyberbhai_" target="_blank" class="brand-btn insta-btn">
+        <i class="fab fa-instagram brand-icon insta-icon"></i>
+        <span class="insta-text">Instagram</span>
+      </a>
 
-            document.querySelectorAll('.project-card, .contact-item').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(25px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
+      <!-- YouTube Button -->
+      <a href="https://www.youtube.com/@psofficialteam" target="_blank" class="brand-btn yt-btn">
+        <i class="fab fa-youtube brand-icon yt-icon"></i>
+        <span class="yt-text"><span class="you">You</span><span class="tube">Tube</span></span>
+      </a>
 
-            window.addEventListener('scroll', () => {
-                document.querySelectorAll('.project-card, .contact-item').forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight * 0.8) {
-                        el.style.opacity = '1';
-                        el.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-        });
-    </script>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>© 2026 Samaksh Kaushik | Portfolio</footer>
+
+<script>
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')});
+},{threshold:.15});
+document.querySelectorAll('.fade-in,.slide-left,.slide-right,.scale-in').forEach(el=>observer.observe(el));
+
+window.addEventListener('scroll',()=>{
+  const scrolled=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+  document.getElementById('progressBar').style.width=scrolled+'%';
+});
+
+const nameEl=document.getElementById('typedName');
+const fullName='Samaksh Kaushik';
+let idx=0;
+function typeEffect(){
+  if(idx<=fullName.length){
+    nameEl.textContent=fullName.substring(0,idx);
+    idx++;
+    setTimeout(typeEffect,90);
+  }else{
+    nameEl.classList.add('typed');
+  }
+}
+nameEl.textContent='';
+setTimeout(typeEffect,800);
+</script>
 </body>
 </html>
+
