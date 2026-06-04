@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samakshkaushik.vercel.app/sitemap.xml
